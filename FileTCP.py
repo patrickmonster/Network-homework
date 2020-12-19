@@ -21,7 +21,7 @@ class MyTcpHandler(socketserver.BaseRequestHandler):
         if not exists(filename): # 파일이 해당 디렉터리에 존재하지 않으면
             print("요청파일[%s]" %filename)
             return # handle()함수를 빠져 나온다.
-
+ 
         print('파일[%s] 전송 시작...' %filename)
         with open(filename, 'rb') as f:
             try:

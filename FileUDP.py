@@ -11,8 +11,7 @@ BUFSIZE = 1024
 #Server
 def catchFileFromClient():
     s = socket(AF_INET,SOCK_DGRAM) #소캣 32bit UDP
-    print(s.bind((HOST,PORT)) )
-    print(s)
+    s.bind((HOST,PORT)) 
 
     f = open("out.txt",'wb') 
     data,addr = s.recvfrom(BUFSIZE) 
@@ -34,7 +33,7 @@ def server():
 def sendFileFromServer(filename):
     s = socket(AF_INET,SOCK_DGRAM) #소캣 32bit UDP
     addr = (HOST,PORT) 
-    print(s.connect(addr))
+
     f=open (filename, "rb") #파일 일기용으로 열기
     data = f.read(BUFSIZE) #파일 읽기
     while (data): 
